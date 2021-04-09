@@ -1,4 +1,4 @@
-package main
+package zap
 
 import (
 	"fmt"
@@ -9,9 +9,14 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-func main() {
-
-}
+/*
+/  uber-zap provides a logger to replace the default Logger and SugaredLogger
+/  It uses zapcore.NewCore() to create a "Core", which is a minimal, faster logger
+/  interface. In this example the only logger option set is 'zap.AddCaller()' which configures
+/  the logger to annotate each message with the filename, line number, and func name
+/  This config will print logs in this format:
+/  '| 2021-04-08T18:26:05Z INFO example/main.go:15 Starting the server...'
+*/
 
 func InitLogger() {
 	createDirectoryIfNotExists()
